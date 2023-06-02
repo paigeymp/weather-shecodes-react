@@ -2,10 +2,10 @@ import "./App.css";
 
 export default function App() {
   return (
-    <div className="App">
-      <h1>Weather App</h1>
-      <footer>
-        <p>
+    <div className="container">
+      <div className="App">
+        <h1>Weather App</h1>
+        <footer>
           This project is created by Paige Powell and is{" "}
           <a
             href="https://github.com/paigeymp/weather-shecodes-react"
@@ -15,8 +15,8 @@ export default function App() {
           >
             open-sourced on GitHub
           </a>
-        </p>
-      </footer>
+        </footer>
+      </div>
     </div>
   );
 }
