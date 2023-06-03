@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
@@ -15,7 +16,7 @@ export default function Weather() {
       description: response.data.condition.description,
       icon: response.data.condition.icon_url,
       wind: response.data.wind.speed,
-      date: "Saturday 10:00",
+      date: new Date(response.data.time * 1000),
     });
   }
 
@@ -43,7 +44,9 @@ export default function Weather() {
         </form>
         <h1>{weatherData.city}</h1>
         <ul>
-          <li>{weatherData.date}</li>
+          <li>
+            <FormattedDate date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row mt-3">
@@ -73,8 +76,8 @@ export default function Weather() {
     );
   } else {
     const apiKey = "a5c1a8d6ca8307bb18045a8ofa2at259";
-    let query = "Toronto";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}&units=metric`;
+
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
     return "Loading...";
