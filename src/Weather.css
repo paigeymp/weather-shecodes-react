@@ -3,9 +3,13 @@
   font-family: arial, sans-serif;
   padding: 16px;
   margin: 30px auto;
-
-  border-radius: 4px;
-  color: rgb(135, 135, 135);
+  background-image: linear-gradient(
+    to right,
+    rgb(3, 172, 202),
+    rgb(159, 228, 255)
+  );
+  border-radius: 9px;
+  color: rgb(255, 255, 255);
 }
 
 .Weather form {
