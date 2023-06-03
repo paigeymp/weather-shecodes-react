@@ -1,6 +1,6 @@
 .Weather {
   border: 1px solid #dadde1;
-  font-family: arial, sans-serif;
+  font-family: "Rubik Vinyl", cursive;
   padding: 16px;
   margin: 30px auto;
   background-image: linear-gradient(
@@ -57,4 +57,9 @@
   line-height: 1;
   top: -32px;
   margin-left: 0px;
+}
+
+.Weather .search-btn:hover {
+  background-color: rgb(160, 235, 235);
+  border-color: white;
 }
