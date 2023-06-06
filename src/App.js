@@ -13,7 +13,7 @@ export default function App() {
             href="https://github.com/paigeymp/weather-shecodes-react"
             target="_blank"
             title="github"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             open-sourced on GitHub
           </a>

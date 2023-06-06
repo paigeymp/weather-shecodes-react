@@ -59,6 +59,13 @@
   margin-left: 0px;
 }
 
+.Weather .search-btn, .location-btn {
+  text-align: center;
+  margin: 0 auto;
+  padding: 5px;
+  display: block;
+}
+
 .Weather .search-btn:hover {
   background-color: rgb(160, 235, 235);
   border-color: white;

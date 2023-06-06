@@ -22,6 +22,18 @@ export default function Weather(props) {
     });
   }
 
+ function searchLocation(position) {
+  let apiKey = "a5c1a8d6ca8307bb18045a8ofa2at259";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleResponse);
+}
+
+function retrieveLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -42,7 +54,7 @@ export default function Weather(props) {
       <div className="Weather">
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-9">
+            <div className="col-6">
               <input
                 type="search"
                 placeholder="Enter a city..."
@@ -51,12 +63,15 @@ export default function Weather(props) {
                 onChange={handleCityChange}
               />
             </div>
-            <div className="col-3">
+            <div className="col-2">
               <input
                 type="submit"
                 value="Search"
                 className="search-btn btn btn-light text-success w-100"
               />{" "}
+            </div>
+            <div className="col-2">
+              <input type="submit" value="Current" className="location-btn btn btn-dark text-light w-100" onClick={retrieveLocation}/>
             </div>
           </div>
         </form>{" "}
