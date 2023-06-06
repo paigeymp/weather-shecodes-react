@@ -73,6 +73,22 @@
 
 .Weather .weather-icon {
   height: 70px;
-  width: 70px;
-  
+  width: 70px; 
+}
+
+@media (max-width: 600px) {
+.Weather .WeatherInfo {
+  text-align: center;
+}
+
+.Weather .current-temp-display {
+  display: flex;
+  justify-content: center;
+}
+
+.Weather .search-btn, .location-btn, .form-control {
+  padding: 6px;
+  font-size: 14px;
+}
+
 }

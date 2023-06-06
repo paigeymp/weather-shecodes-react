@@ -63,14 +63,14 @@ function retrieveLocation(event) {
                 onChange={handleCityChange}
               />
             </div>
-            <div className="col-2">
+            <div className="col-3">
               <input
                 type="submit"
                 value="Search"
                 className="search-btn btn btn-light text-success w-100"
               />{" "}
             </div>
-            <div className="col-2">
+            <div className="col-3">
               <input type="submit" value="Current" className="location-btn btn btn-dark text-light w-100" onClick={retrieveLocation}/>
             </div>
           </div>
